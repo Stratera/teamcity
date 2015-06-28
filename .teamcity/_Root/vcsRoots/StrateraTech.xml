@@ -8,7 +8,7 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="secure:password" value="zxx58a928ba4130d887f9d0f147cc65192b" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec" value="+:*" />
+  <param name="teamcity:branchSpec" value="+:refs/heads/(*)" />
   <param name="url" value="https://github.com/Stratera/%GitHubRepoName%.git" />
   <param name="useAlternates" value="true" />
   <param name="username" value="StrateraTech" />
