@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
   <versionedSettings rootId="Sync" enabled="true" showChanges="true" />
+  <report-tabs>
+    <build-report-tab title="Code Coverage" startPage="/coverage/index.html" />
+  </report-tabs>
 </settings>
 
