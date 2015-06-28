@@ -18,9 +18,7 @@ npm test]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="StrateraTech">
-        <checkout-rule rule="+:**" />
-      </vcs-entry-ref>
+      <vcs-entry-ref root-id="StrateraTech" />
     </vcs-settings>
     <requirements />
     <build-triggers />
