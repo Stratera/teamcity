@@ -5,7 +5,6 @@
   <settings>
     <options>
       <option name="artifactRules" value="**/*" />
-      <option name="cleanBuild" value="true" />
     </options>
     <parameters />
     <build-runners>
