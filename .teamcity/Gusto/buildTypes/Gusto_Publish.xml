@@ -18,7 +18,7 @@ npm test]]></param>
       </runner>
       <runner id="RUNNER_4" name="Code Coverage" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="npm run coverage" />
+          <param name="script.content" value="npm publish" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
