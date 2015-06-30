@@ -28,9 +28,14 @@ cd /opt/gusto/node_modules/gusto-stratera
 echo reinstalling forever
 echo starting
 sudo forever start -l forever.log -o out.log -e err.log -a server.js
+forever list
 echo hitting default route
 sudo curl http://localhost:8999/
-echo deployment complete]]></param>
+echo 
+echo deployment complete
+sleep 10s
+forever list
+sleep 10s]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
