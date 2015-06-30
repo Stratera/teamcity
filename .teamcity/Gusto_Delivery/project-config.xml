@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="Gusto" uuid="4f5a0a45-fdc8-4287-89c6-65aa357e53f0" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Delivery</name>
+  <parameters />
+  <cleanup />
+</project>
+
