@@ -18,12 +18,12 @@ sudo forever list
 sudo forever stop 0
 sudo forever list
 echo gusto stopped, deleting.
-rm /opt/gusto -rf
+sudo rm /opt/gusto -rf
 echo recreating gusto directory
-mkdir /opt/gusto
+sudo mkdir /opt/gusto
 cd /opt/gusto
 echo installing gusto
-npm install gusto-stratera
+sudo npm install gusto-stratera
 cd /opt/gusto/node_modules/gusto-stratera
 echo reinstalling forever
 echo starting
