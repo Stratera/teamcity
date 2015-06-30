@@ -9,7 +9,7 @@
         <parameters>
           <param name="script.content"><![CDATA[HOME=$HOME:/usr/bin/forever
 echo connecting to gusto server
-cd /opt/teamcity/TeamCity/.BuildServer/config/projects/Gusto/pluginData/ssh_keys
+cd /opt/teamcity
 ssh -i teamcity.pem root@52.24.97.8
 echo connected
 echo stopping gusto service
