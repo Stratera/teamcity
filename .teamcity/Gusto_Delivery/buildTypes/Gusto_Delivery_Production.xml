@@ -26,7 +26,7 @@ cd /opt/gusto/node_modules/gusto-stratera
 echo reinstalling forever
 sudo npm install -g forever
 echo starting
-sudo forever start -l forever.log -o out.log -e err.log server.js
+sudo forever start -l forever.log -o out.log -e err.log -a server.js
 echo hitting default route
 sudo curl http://localhost:8999/
 echo deployment complete]]></param>
