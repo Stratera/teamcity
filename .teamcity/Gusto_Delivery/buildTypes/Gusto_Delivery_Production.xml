@@ -7,14 +7,16 @@
     <build-runners>
       <runner id="RUNNER_5" name="Update Gusto" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo connecting to gusto server
+          <param name="script.content"><![CDATA[HOME=$HOME:/usr/bin/forever
+echo connecting to gusto server
 cd /opt/teamcity/TeamCity/.BuildServer/config/projects/Gusto/pluginData/ssh_keys
 ssh -i teamcity.pem root@52.24.97.8
 echo connected
 echo stopping gusto service
 cd /opt/gusto/node_modules/gusto-stratera
-npm install -g forever
-forever stop server.js
+forever list
+forever stop 0
+forever list
 echo gusto stopped, deleting.
 rm /opt/gusto -rf
 echo recreating gusto directory
@@ -24,7 +26,6 @@ echo installing gusto
 npm install gusto-stratera
 cd /opt/gusto/node_modules/gusto-stratera
 echo reinstalling forever
-sudo npm install -g forever
 echo starting
 sudo forever start -l forever.log -o out.log -e err.log -a server.js
 echo hitting default route
