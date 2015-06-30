@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="ced21f75-5385-44bf-9394-60c335867960" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Publish</name>
+  <description>PreRelease build configuration for unit testing and code coverage</description>
+  <settings>
+    <options>
+      <option name="artifactRules" value="**/*" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_3" name="Unit Test" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[npm install
+npm test]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_4" name="Code Coverage" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="npm run coverage" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="StrateraTech" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="vcsTrigger" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <cleanup />
+  </settings>
+</build-type>
+
