@@ -9,12 +9,15 @@
         <parameters>
           <param name="script.content"><![CDATA[cd /opt/teamcity/TeamCity/.BuildServer/config/projects/Gusto/pluginData/ssh_keys
 ssh -i teamcity.pem root@52.24.97.8
-forever stop /opt/gusto/node_modules/gusto-stratera/server.js
+cd /opt/gusto/node_modules/gusto-stratera
+npm install forever
+forever stop server.js
 rm /opt/gusto -rf
 mkdir /opt/gusto
 cd /opt/gusto
 npm install gusto-stratera
 cd /opt/gusto/node_modules/gusto-stratera
+npm install forever
 forever start server.js]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
