@@ -4,7 +4,24 @@
   <description />
   <settings>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_5" name="Update Gusto" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[cd /opt/teamcity/TeamCity/.BuildServer/config/projects/Gusto/pluginData/ssh_keys
+ssh -i teamcity.pem root@52.24.97.8
+killall npm
+killall node
+rm /opt/gusto -rf
+mkdir /opt/gusto
+cd /opt/gusto
+npm install gusto-stratera
+cd /opt/gusto/node_modules/gusto-stratera
+npm start]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers />
