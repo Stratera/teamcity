@@ -8,14 +8,6 @@
     </options>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_3" name="Unit Test" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[npm install
-npm test]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_4" name="Code Coverage" type="simpleRunner">
         <parameters>
           <param name="script.content" value="npm publish" />
