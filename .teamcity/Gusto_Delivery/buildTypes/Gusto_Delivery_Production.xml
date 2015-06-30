@@ -33,9 +33,9 @@ echo hitting default route
 sudo curl http://localhost:8999/
 echo 
 echo deployment complete
-sleep 10s
+sleep 20s
 forever list
-sleep 10s]]></param>
+sleep 20s]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
