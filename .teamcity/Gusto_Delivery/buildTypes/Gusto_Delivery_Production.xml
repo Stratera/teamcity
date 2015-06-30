@@ -14,28 +14,24 @@ ssh -i teamcity.pem root@52.24.97.8
 echo connected
 echo stopping gusto service
 cd /opt/gusto/node_modules/gusto-stratera
-sudo forever list
-sudo forever stop 0
-sudo forever list
 echo gusto stopped, deleting.
-sudo rm /opt/gusto -rf
+rm /opt/gusto -rf
 echo recreating gusto directory
-sudo mkdir /opt/gusto
+mkdir /opt/gusto
 cd /opt/gusto
 echo installing gusto
-sudo npm install gusto-stratera
+npm install gusto-stratera
 cd /opt/gusto/node_modules/gusto-stratera
 echo reinstalling forever
 echo starting
-sudo forever start -l forever.log -o out.log -e err.log -a server.js
-sudo forever list
+forever start server.js
+forever list
 echo hitting default route
-sudo curl http://localhost:8999/
+sleep 2
+curl http://localhost:8999/
 echo 
 echo deployment complete
-sleep 20
-sudo forever list
-sleep 20]]></param>
+forever list]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
