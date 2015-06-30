@@ -24,11 +24,11 @@ echo installing gusto
 npm install gusto-stratera
 cd /opt/gusto/node_modules/gusto-stratera
 echo reinstalling forever
-npm install -g forever
+sudo npm install -g forever
 echo starting
-forever start -l forever.log -o out.log -e err.log server.js
+sudo forever start -l forever.log -o out.log -e err.log server.js
 echo hitting default route
-curl http://localhost:8999/
+sudo curl http://localhost:8999/
 echo deployment complete]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
