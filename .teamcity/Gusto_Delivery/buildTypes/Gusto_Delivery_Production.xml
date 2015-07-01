@@ -9,13 +9,19 @@
         <parameters>
           <param name="script.content"><![CDATA[cd /opt/teamcity
 ssh -i teamcity.pem root@52.24.97.8
-killall node
-rm /opt/gusto -rf
-mkdir /opt/gusto
+echo killing all node instances
+sudo killall node
+echo removing directory
+sudo rm /opt/gusto -rf
+echo recreating directory
+sudo mkdir /opt/gusto
 cd /opt/gusto
-npm install gusto-stratera
+echo installing gusto-stratera
+sudo npm install gusto-stratera
 cd /opt/gusto/node_modules/gusto-stratera
-nohup node server.js > /dev/null 2>&1 &]]></param>
+echo starting process
+sudo nohup node server.js > /dev/null 2>&1 &
+echo process started - exiting]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
