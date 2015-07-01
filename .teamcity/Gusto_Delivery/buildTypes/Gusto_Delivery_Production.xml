@@ -8,7 +8,9 @@
       <runner id="RUNNER_5" name="Update Gusto" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[cd /opt/teamcity
+$(hostname)
 ssh -i teamcity.pem root@52.24.97.8
+$(hostname)
 echo killing all node instances
 sudo killall node
 echo removing directory
