@@ -7,31 +7,15 @@
     <build-runners>
       <runner id="RUNNER_5" name="Update Gusto" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[HOME=$HOME:/usr/bin/forever
-echo connecting to gusto server
-cd /opt/teamcity
+          <param name="script.content"><![CDATA[cd /opt/teamcity
 ssh -i teamcity.pem root@52.24.97.8
-echo connected
-echo stopping gusto service
-cd /opt/gusto/node_modules/gusto-stratera
-echo gusto stopped, deleting.
+killall node
 rm /opt/gusto -rf
-echo recreating gusto directory
 mkdir /opt/gusto
 cd /opt/gusto
-echo installing gusto
 npm install gusto-stratera
 cd /opt/gusto/node_modules/gusto-stratera
-echo reinstalling forever
-echo starting
-forever start server.js
-forever list
-echo hitting default route
-sleep 2
-curl http://localhost:8999/
-echo 
-echo deployment complete
-forever list]]></param>
+nohup node server.js > /dev/null 2>&1 &]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
