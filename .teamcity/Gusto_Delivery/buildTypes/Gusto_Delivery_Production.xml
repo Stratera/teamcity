@@ -5,12 +5,12 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_5" name="Update Gusto" type="simpleRunner">
+      <runner id="RUNNER_5" name="Update Gusto" type="ssh-exec-runner">
         <parameters>
-          <param name="script.content"><![CDATA[cd /opt/teamcity
-$(hostname)
-ssh -i teamcity.pem root@52.24.97.8
-$(hostname)
+          <param name="jetbrains.buildServer.deployer.targetUrl" value="52.24.131.202" />
+          <param name="jetbrains.buildServer.deployer.username" value="root" />
+          <param name="jetbrains.buildServer.sshexec.authMethod" value="CUSTOM_KEY" />
+          <param name="jetbrains.buildServer.sshexec.command"><![CDATA[$(hostname)
 echo killing all node instances
 sudo killall node
 echo removing directory
@@ -24,8 +24,8 @@ cd /opt/gusto/node_modules/gusto-stratera
 echo starting process
 sudo nohup node server.js > /dev/null 2>&1 &
 echo process started - exiting]]></param>
+          <param name="jetbrains.buildServer.sshexec.keyFile" value="/opt/teamcity/teamcity.pem" />
           <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
