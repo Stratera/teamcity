@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<settings />
+<settings>
+  <issueTrackers>
+    <trackerConnection key="jira1" type="jira">
+      <param name="secure:password" value="zxx85438a70d6741dfe775d03cbe80d301b" />
+      <param name="username" value="jdietz" />
+      <param name="host" value="https://strateratech.atlassian.net" />
+      <param name="idPrefix" value="AMC GADSP GPD RDG" />
+      <param name="name" value="JIRA Issues" />
+    </trackerConnection>
+  </issueTrackers>
+</settings>
 
