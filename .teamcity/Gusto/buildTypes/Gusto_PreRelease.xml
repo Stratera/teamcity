@@ -36,6 +36,20 @@ npm test]]></param>
         </parameters>
       </build-trigger>
     </build-triggers>
+    <build-extensions>
+      <extension id="BUILD_EXT_1" type="teamcity.github.status">
+        <parameters>
+          <param name="github_report_on" value="on start and finish" />
+          <param name="guthub_authentication_type" value="password" />
+          <param name="guthub_context" value="continuous-integration/teamcity" />
+          <param name="guthub_host" value="https://api.github.com" />
+          <param name="guthub_owner" value="Stratera" />
+          <param name="guthub_repo" value="Gusto" />
+          <param name="guthub_username" value="StrateraTech" />
+          <param name="secure:guthub_username" value="zxx58a928ba4130d8876968a7574495dd91" />
+        </parameters>
+      </extension>
+    </build-extensions>
     <cleanup />
   </settings>
 </build-type>
