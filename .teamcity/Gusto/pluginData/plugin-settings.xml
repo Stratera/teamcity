@@ -1,13 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<settings>
-  <issueTrackers>
-    <trackerConnection key="jira1" type="jira">
-      <param name="secure:password" value="zxx76d2eabd9fc7aa5b8e0f0041ce43888a" />
-      <param name="username" value="jdietz" />
-      <param name="host" value="https://strateratech.atlassian.net" />
-      <param name="idPrefix" value="" />
-      <param name="name" value="JIRA Issues" />
-    </trackerConnection>
-  </issueTrackers>
-</settings>
+<settings />
 
