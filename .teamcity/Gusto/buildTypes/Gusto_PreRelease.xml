@@ -46,7 +46,7 @@ npm test]]></param>
           <param name="guthub_owner" value="Stratera" />
           <param name="guthub_repo" value="Gusto" />
           <param name="guthub_username" value="StrateraTech" />
-          <param name="secure:guthub_username" value="zxx58a928ba4130d8876968a7574495dd91" />
+          <param name="secure:guthub_username" value="zxx58a928ba4130d887f9d0f147cc65192b" />
         </parameters>
       </extension>
     </build-extensions>
