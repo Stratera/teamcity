@@ -45,7 +45,7 @@ killall node
 echo removing directory
 rm /opt/gusto -rf
 echo recreating directory
-mkdir /opt/gusto
+sudo mkdir /opt/gusto
 cd /opt/gusto
 echo installing gusto-stratera
 npm install gusto-stratera
