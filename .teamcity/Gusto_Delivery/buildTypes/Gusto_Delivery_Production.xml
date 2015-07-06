@@ -55,7 +55,7 @@ cd /opt/gusto/node_modules/gusto-stratera
 echo building docker image
 docker build -t johndietz/gusto .
 echo running docker container
-sudo docker run -d
+sudo docker run -d -p 80:8999 johndietz/gusto
 echo docker process started - exiting]]></param>
           <param name="jetbrains.buildServer.sshexec.keyFile" value="/opt/teamcity/teamcity.pem" />
           <param name="teamcity.step.mode" value="default" />
