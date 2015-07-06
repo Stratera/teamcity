@@ -41,7 +41,7 @@ echo process started - exiting]]></param>
           <param name="jetbrains.buildServer.sshexec.authMethod" value="CUSTOM_KEY" />
           <param name="jetbrains.buildServer.sshexec.command"><![CDATA[$(hostname)
 echo removing all docker containers
-docker rm $(docker ps -a -q)
+docker rm $(docker ps -a -q) -f
 echo removing directory
 sudo rm /opt/gusto -rf
 echo recreating directory
