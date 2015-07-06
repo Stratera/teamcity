@@ -40,8 +40,8 @@ echo process started - exiting]]></param>
           <param name="jetbrains.buildServer.deployer.username" value="ec2-user" />
           <param name="jetbrains.buildServer.sshexec.authMethod" value="CUSTOM_KEY" />
           <param name="jetbrains.buildServer.sshexec.command"><![CDATA[$(hostname)
-echo killing all node instances
-sudo killall node
+echo removing all docker containers
+docker rm $(docker ps -a -q)
 echo removing directory
 sudo rm /opt/gusto -rf
 echo recreating directory
@@ -55,8 +55,8 @@ cd /opt/gusto/node_modules/gusto-stratera
 echo building docker image
 docker build -t johndietz/gusto .
 echo running docker container
-sudo nohup docker run > /dev/null 2>&1 &
-echo dock process started - exiting]]></param>
+sudo docker run -d
+echo docker process started - exiting]]></param>
           <param name="jetbrains.buildServer.sshexec.keyFile" value="/opt/teamcity/teamcity.pem" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
