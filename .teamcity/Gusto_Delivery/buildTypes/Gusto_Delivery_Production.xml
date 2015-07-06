@@ -31,6 +31,29 @@ echo process started - exiting]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_3" name="Update Gusto (1)" type="ssh-exec-runner">
+        <parameters>
+          <param name="jetbrains.buildServer.deployer.targetUrl" value="52.24.131.202" />
+          <param name="jetbrains.buildServer.deployer.username" value="root" />
+          <param name="jetbrains.buildServer.sshexec.authMethod" value="CUSTOM_KEY" />
+          <param name="jetbrains.buildServer.sshexec.command"><![CDATA[$(hostname)
+echo killing all node instances
+sudo killall node
+echo removing directory
+sudo rm /opt/gusto -rf
+echo recreating directory
+sudo mkdir /opt/gusto
+cd /opt/gusto
+echo installing gusto-stratera
+sudo npm install gusto-stratera
+cd /opt/gusto/node_modules/gusto-stratera
+echo starting process
+sudo nohup node server.js > /dev/null 2>&1 &
+echo process started - exiting]]></param>
+          <param name="jetbrains.buildServer.sshexec.keyFile" value="/opt/teamcity/teamcity.pem" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings />
     <requirements />
