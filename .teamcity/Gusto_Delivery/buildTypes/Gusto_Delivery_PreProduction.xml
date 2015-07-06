@@ -34,7 +34,7 @@ echo process started - exiting]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_7" name="Update Gusto (1)" type="ssh-exec-runner">
+      <runner id="RUNNER_7" name="Update Gusto Dockerized" type="ssh-exec-runner">
         <parameters>
           <param name="jetbrains.buildServer.deployer.targetUrl" value="52.27.171.231" />
           <param name="jetbrains.buildServer.deployer.username" value="ec2-user" />
