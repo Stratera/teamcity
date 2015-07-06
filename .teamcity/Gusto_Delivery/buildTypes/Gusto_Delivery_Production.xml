@@ -69,8 +69,7 @@ echo docker process started - exiting]]></param>
       <build-trigger id="TRIGGER_1" type="buildDependencyTrigger">
         <parameters>
           <param name="afterSuccessfulBuildOnly" value="true" />
-          <param name="branchFilter" value="+:&lt;default&gt;" />
-          <param name="dependsOn" value="Gusto_Publish" />
+          <param name="dependsOn" value="Gusto_Delivery_PreProduction" />
         </parameters>
       </build-trigger>
     </build-triggers>
