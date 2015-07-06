@@ -10,7 +10,7 @@
     <build-runners>
       <runner id="RUNNER_5" name="Update Gusto" type="ssh-exec-runner">
         <parameters>
-          <param name="jetbrains.buildServer.deployer.targetUrl" value="52.27.111.249" />
+          <param name="jetbrains.buildServer.deployer.targetUrl" value="52.27.171.231" />
           <param name="jetbrains.buildServer.deployer.username" value="root" />
           <param name="jetbrains.buildServer.sshexec.authMethod" value="CUSTOM_KEY" />
           <param name="jetbrains.buildServer.sshexec.command"><![CDATA[$(hostname)
