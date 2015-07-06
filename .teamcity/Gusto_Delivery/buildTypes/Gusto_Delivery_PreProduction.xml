@@ -6,6 +6,9 @@
     <options>
       <option name="artifactRules" value="**/*" />
     </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_7" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_6" name="Update Gusto" type="ssh-exec-runner">
