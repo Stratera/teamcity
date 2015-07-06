@@ -50,9 +50,13 @@ cd /opt/gusto
 echo installing gusto-stratera
 sudo npm install gusto-stratera
 cd /opt/gusto/node_modules/gusto-stratera
-echo starting process
-sudo nohup node server.js > /dev/null 2>&1 &
-echo process started - exiting]]></param>
+#echo starting process
+#sudo nohup node server.js > /dev/null 2>&1 &
+echo building docker image
+docker build -t johndietz/gusto .
+echo running docker container
+sudo nohup docker run > /dev/null 2>&1 &
+echo dock process started - exiting]]></param>
           <param name="jetbrains.buildServer.sshexec.keyFile" value="/opt/teamcity/teamcity.pem" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
