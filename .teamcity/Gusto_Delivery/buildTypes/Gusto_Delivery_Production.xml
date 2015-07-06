@@ -41,17 +41,17 @@ echo process started - exiting]]></param>
           <param name="jetbrains.buildServer.sshexec.authMethod" value="CUSTOM_KEY" />
           <param name="jetbrains.buildServer.sshexec.command"><![CDATA[$(hostname)
 echo killing all node instances
-killall node
+sudo killall node
 echo removing directory
-rm /opt/gusto -rf
+sudo rm /opt/gusto -rf
 echo recreating directory
 sudo mkdir /opt/gusto
 cd /opt/gusto
 echo installing gusto-stratera
-npm install gusto-stratera
+sudo npm install gusto-stratera
 cd /opt/gusto/node_modules/gusto-stratera
 echo starting process
-nohup node server.js > /dev/null 2>&1 &
+sudo nohup node server.js > /dev/null 2>&1 &
 echo process started - exiting]]></param>
           <param name="jetbrains.buildServer.sshexec.keyFile" value="/opt/teamcity/teamcity.pem" />
           <param name="teamcity.step.mode" value="default" />
